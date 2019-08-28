@@ -30,3 +30,5 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 export default connect(mapStateToProps)(CollectionPage);
+
+//selectCollection(ownProps.match.params.collectionId)(state)
