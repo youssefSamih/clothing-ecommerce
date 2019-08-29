@@ -12,34 +12,34 @@ import CheckoutPage from './pages/checkout/checkout.component';
 
 import Header from './components/header/header.component';
 
-import { auth, createUserProfileDocument, addCollectionAndDocuments } from './firebase/firebase.utils';
+// import { auth, createUserProfileDocument, addCollectionAndDocuments } from './firebase/firebase.utils';
 
-import { setCurrentUser } from './redux/user/user.actions';
+// import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
-  componentDidMount() {
-    const { setCurrentUser, collectionArray } = this.props;
+  // componentDidMount() {
+  //   // const { setCurrentUser, collectionArray } = this.props;
 
-    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
-    //   if (userAuth) {
-    //     const userRef = await createUserProfileDocument(userAuth);
+  //   // this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+  //   //   if (userAuth) {
+  //   //     const userRef = await createUserProfileDocument(userAuth);
 
-    //     userRef.onSnapshot(snapShot => {
-    //       setCurrentUser({
-    //         id: snapShot.id,
-    //         ...snapShot.data()
-    //       });
-    //     });
-    //   }
+  //   //     userRef.onSnapshot(snapShot => {
+  //   //       setCurrentUser({
+  //   //         id: snapShot.id,
+  //   //         ...snapShot.data()
+  //   //       });
+  //   //     });
+  //   //   }
 
-    //   setCurrentUser(userAuth);
-      // addCollectionAndDocuments('collections',collectionArray.map(({title, items}) => ({title, items})))
-    // })
-  }
+  //   //   setCurrentUser(userAuth);
+  //     // addCollectionAndDocuments('collections',collectionArray.map(({title, items}) => ({title, items})))
+  //   // })
+  // }
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
@@ -75,11 +75,11 @@ const mapStateToProps = createStructuredSelector({
   collectionArray: selectCollectionsForPreview
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-});
+// const mapDispatchToProps = dispatch => ({
+//   setCurrentUser: user => dispatch(setCurrentUser(user))
+// });
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps/*,
+  mapDispatchToProps*/
 )(App);
