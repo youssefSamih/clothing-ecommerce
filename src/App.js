@@ -21,7 +21,7 @@ import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 import { checkUserSession } from "./redux/user/user.actions";
 
 const App = ({ checkUserSession, currentUser }) => {
-  unsubscribeFromAuth = null;
+  // unsubscribeFromAuth = null;
 
   useEffect(() => {
     checkUserSession()
